@@ -1,0 +1,11 @@
+.nav-container {
+    background-color: #1A2929;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+.nav-item {
+    color: white;
+    font-size: bold;
+}

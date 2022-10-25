@@ -1,10 +1,14 @@
 import './App.css';
+import './index.css';
+import NavBar from './Components/NavBar/NavBar';
+import AddEmployee from './Components/AddEmployee/AddEmployee';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <NavBar />
+      <AddEmployee />
+    </>
   );
 }
 
