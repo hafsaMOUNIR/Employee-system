@@ -1,9 +1,11 @@
 import React ,{useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import EmployeeService from '../../services/EmployeeService';
 import './AddEmployee.css';
 
 const AddEmployee = () => {
-  const [employee, setEmployee] = useState({
+    const navigate = useNavigate();
+    const [employee, setEmployee] = useState({
     id : "",
     firstName : "",
     lastName : "",
@@ -20,6 +22,16 @@ const AddEmployee = () => {
     })
     .catch((error) => {
         console.log(error);
+    })
+    navigate("/EmployeeList");
+  }
+  const reset = (e) =>{
+    e.preventDefault();
+    setEmployee({
+        id : "",
+        firstName : "",
+        lastName : "",
+        email  : "",
     })
   }
   return (
@@ -66,10 +78,11 @@ const AddEmployee = () => {
         </div>
         <div className="form-item items-center justify-center h-14 w-full my-4">
             <div className='button-container'>
-                <button onClick={saveEmployee}>
+                <button 
+                onClick={saveEmployee}>
                     <span>Enregistrer</span>
                 </button>
-                <button>
+                <button onClick={reset}>
                     <span>Annuler</span>
                 </button>
             </div>
